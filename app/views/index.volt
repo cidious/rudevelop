@@ -9,7 +9,6 @@
  <meta content="Dmitry Cidious <cidious@gmail.com>" name="author"/>
  <title>{{ TITLE }}</title>
  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
- <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
 </head>
 <body>
  <nav class="navbar navbar-default" role="navigation">
@@ -47,6 +46,5 @@
 </body>
 <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 {{ javascript_include("js/index.js") }}
 </html>
