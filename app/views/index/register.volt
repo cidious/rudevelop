@@ -5,11 +5,11 @@
  <div class="modal-body">
   <form method="post" id="register-form">
    {{ hidden_field("id":"token", "name":security.getTokenKey(), "value": security.getToken()) }}
-   <div class="form-group has-feedback" id="login-group">
-    <label class="control-label" for="login">логин</label>
-    {{ text_field("login", "class": "form-control", "title":"login", "required":"required") }}
-    <span id="login-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
-    <span id="login-help" class="help-block"></span>
+   <div class="form-group has-feedback" id="username-group">
+    <label class="control-label" for="username">логин</label>
+    {{ text_field("username", "class": "form-control", "title":"username", "required":"required") }}
+    <span id="username-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    <span id="username-help" class="help-block"></span>
    </div>
 
    <div class="form-group has-feedback" id="password1-group">
@@ -24,7 +24,6 @@
     {{ password_field("password2", "class": "form-control", "title":"password", "required":"required") }}
     <span id="password2-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
     <span id="password2-help" class="help-block"></span>
-    <span class="help-block">ваш пароль должен содержать цифры, буквы, завязку, развитие, кульминацию и неожиданный финал</span>
    </div>
 
    <div class="form-group has-feedback" id="email-group">

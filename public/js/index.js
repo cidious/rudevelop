@@ -23,24 +23,59 @@ $(function() {
   icon.removeClass('glyphicon-remove').addClass('glyphicon-ok');
  }
 
- function validate_field(field) {
+ function validate_field(field, value) {
+  if (field == 'password2' && value != $('#password1').val()) {
+   not_valid('password2', 'Пароли не совпадают');
+   return;
+  }
 
+  $.ajax({
+   url: '/index/validate',
+   type: "POST",
+   dataType: "JSON",
+   data: {
+    field: field,
+    value: value
+   }
+  })
+   .done(function(response) {
+    if (response.result) {
+     valid(field, '');
+    } else if (response.error) {
+     not_valid(field, response.error);
+    }
+   })
+   .fail(function() {
+
+   });
  }
 
  function validate_all() {
+  $.ajax({
+   url: '/index/register',
+   type: "POST",
+   dataType: "JSON",
+   data: {
 
+   }
+  })
+   .done(function(response) {
+
+   })
+   .fail(function() {
+
+   });
  }
 
  $('.form-control').blur(function() {
   var id = $(this).attr('id');
   var value = $(this).val();
   if (value == '') { return; }
-
-  //console.log(id+' blur '+value);
+  validate_field(id, value);
  });
 
  $('form#register-form').submit(function() {
-  //console.log('submit');
+  validate_all();
   return false;
  });
 });
