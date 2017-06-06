@@ -1,0 +1,15 @@
+[site]
+DEBUG=1
+CACHE=1
+HOST=rudevelop.cidious.com
+baseUri=/
+
+[output]
+DATEFORMAT=%d.%m.%Y
+
+[db]
+host=localhost
+port=3306
+dbname=rudevelop
+username=rudevelop
+password=rudevelop
