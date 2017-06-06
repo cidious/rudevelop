@@ -27,7 +27,7 @@ class IndexController extends ControllerBase
             }
 
             $remember = $this->request->getPost('remember');
-            if ($remember) {
+            if ($remember == 'true') {
                 $location = 'profile';
                 $this->session->set('auth', [
                     'username' => $username,
