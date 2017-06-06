@@ -1,4 +1,4 @@
 # Rudevelop
 Rudevelop test task
 
-see demo: [rudevelop.cidious.com](http://rudevelop.cidious.com/)
+see demo: [rudevelop.cidious.com](http://rudevelop.cidious.com/index/register)
