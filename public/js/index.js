@@ -1,10 +1,6 @@
 $(function() {
  $('#login').focus();
 
- function empty_valid() {
-
- }
-
  function not_valid(field, helptext) {
   var group = $('div#'+field+'-group');
   var help = $('span#'+field+'-help');
@@ -62,6 +58,11 @@ $(function() {
    }
   });
 
+  $('#username').val('');
+  $('#password1').val('');
+  $('#password2').val('');
+  $('#email').val('');
+
   $.ajax({
    url: '/index/register',
    type: "POST",
@@ -79,10 +80,6 @@ $(function() {
       window.location = '/index/profile';
      } else {
       window.location = '/index/register';
-      $('#username').val('');
-      $('#password1').val('');
-      $('#password2').val('');
-      $('#email').val('');
      }
     }
    })
