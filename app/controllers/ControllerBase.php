@@ -7,7 +7,7 @@ class ControllerBase extends Controller
 {
     public function initialize()
     {
-        $this->view->TITLE = 'Webinspired test task';
+        $this->view->TITLE = 'Rudevelop test task';
     }
 
     public function outJson($payload, $status = 200)

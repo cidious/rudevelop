@@ -30,6 +30,11 @@ class IndexController extends ControllerBase
 
     }
 
+    public function trespassingAction()
+    {
+
+    }
+
     /**
      * взять товар из БД, отдать массив завернутый в JSON
      * @param int $id

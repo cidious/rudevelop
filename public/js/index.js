@@ -31,10 +31,16 @@ $(function() {
 
  }
 
+ $('.form-control').blur(function() {
+  var id = $(this).attr('id');
+  var value = $(this).val();
+  if (value == '') { return; }
 
+  //console.log(id+' blur '+value);
+ });
 
  $('form#register-form').submit(function() {
-
+  //console.log('submit');
   return false;
  });
 });

@@ -76,7 +76,12 @@ $di->set('db', function () use ($config) {
 
 $di->set('dispatcher', function () use ($di) {
     $eventsManager = $di->getShared('eventsManager');
+
+    $security = new \Library\Acl\Access($di);
+    $eventsManager->attach('dispatch', $security);
+
     $dispatcher = new Dispatcher();
+
     $dispatcher->setDefaultNamespace('Controllers');
     $dispatcher->setEventsManager($eventsManager);
 

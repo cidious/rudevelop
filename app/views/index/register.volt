@@ -17,7 +17,6 @@
     {{ password_field("password1", "class": "form-control", "title":"password", "required":"required") }}
     <span id="password1-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
     <span id="password1-help" class="help-block"></span>
-    <span class="help-block">ваш пароль должен содержать цифры, буквы, завязку, развитие, кульминацию и неожиданный финал</span>
    </div>
 
    <div class="form-group has-feedback" id="password2-group">
@@ -25,6 +24,7 @@
     {{ password_field("password2", "class": "form-control", "title":"password", "required":"required") }}
     <span id="password2-icon" class="glyphicon form-control-feedback" aria-hidden="true"></span>
     <span id="password2-help" class="help-block"></span>
+    <span class="help-block">ваш пароль должен содержать цифры, буквы, завязку, развитие, кульминацию и неожиданный финал</span>
    </div>
 
    <div class="form-group has-feedback" id="email-group">

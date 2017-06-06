@@ -11,7 +11,6 @@ return new \Phalcon\Config([
         'tmpDir' => __DIR__ . '/../../var/tmp/',
         'logDir' => __DIR__ . '/../../var/log/',
         'pubDir' => __DIR__ . '/../../public/',
-        'incubatorDir' => __DIR__ . '/../library/Phalcon/',
     ],
     'phalcon' => [
         'controllersDir' => '../app/controllers/',

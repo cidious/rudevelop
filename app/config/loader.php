@@ -8,3 +8,5 @@ $loader->registerNamespaces(array(
     'Library' => $config->application->libraryDir,
     'Phalcon' => $config->application->incubatorDir,
 ))->register();
+
+require $config->application->vendorDir . 'autoload.php';
