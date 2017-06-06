@@ -26,8 +26,10 @@ $(function() {
  function validate_field(field, value) {
   if (field == 'password2' && value != $('#password1').val()) {
    not_valid('password2', 'Пароли не совпадают');
-   return;
+   return false;
   }
+
+  var ret = true;
 
   $.ajax({
    url: '/index/validate',
@@ -41,26 +43,44 @@ $(function() {
    .done(function(response) {
     if (response.result) {
      valid(field, '');
+     ret = true;
     } else if (response.error) {
      not_valid(field, response.error);
+     ret = false;
     }
    })
    .fail(function() {
-
+    ret = false;
    });
+  return ret;
  }
 
  function validate_all() {
+  ['username', 'password2', 'email'].forEach(function (value) {
+   if (!validate_field(value, $('#'+value).val())) {
+    return;
+   }
+  });
+
   $.ajax({
    url: '/index/register',
    type: "POST",
    dataType: "JSON",
    data: {
-
+    username: $('#username').val(),
+    password: $('#password1').val(),
+    email: $('#email').val(),
+    remember: $('#remember').is(':checked')
    }
   })
    .done(function(response) {
-
+    if (response.result) {
+     if (response.result == 'profile') {
+      window.location = '/index/profile';
+     } else {
+      window.location = '/index/register';
+     }
+    }
    })
    .fail(function() {
 

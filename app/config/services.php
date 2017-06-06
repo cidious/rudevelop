@@ -91,3 +91,10 @@ $di->set('dispatcher', function () use ($di) {
 $di->set('router', function () {
     return require __DIR__ . '/routes.php';
 });
+
+$di->setShared("session", function () {
+        $session = new Phalcon\Session\Adapter\Files();
+        $session->start();
+        return $session;
+    }
+);

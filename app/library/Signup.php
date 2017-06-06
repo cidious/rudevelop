@@ -20,7 +20,7 @@ class Signup extends Component
         $validation = new Validation();
         try {
             $validation->validateUsername($username);
-            $validation->validatePassword($username, $password);
+            $validation->validatePassword($password);
             $validation->validateEmail($email);
         } catch (\Exception $e) {
             throw $e;

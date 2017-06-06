@@ -10,10 +10,10 @@ class Password extends Component
     /**
      * генерит соль, шифрует пароль, возвращает шифрованный пароль и соль
      * @static
-     * @param $passwd string
+     * @param string
      * @return array
      */
-    public static function cypherPasswd($passwd)
+    public static function cypherPasswd(string $passwd)
     {
         $salt             = self::shortId(self::$saltSize);
         $passwdCryptCycle = mt_rand(1, 10);

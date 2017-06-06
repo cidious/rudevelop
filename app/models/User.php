@@ -1,7 +1,8 @@
 <?php
 namespace Models;
 
-use Phalcon\Mvc\Model;
+use Phalcon\Mvc\Model, Phalcon\Validation;
+use Phalcon\Validation\Validator\Uniqueness, Phalcon\Validation\Validator\Email;
 
 class User extends Model
 {
@@ -23,4 +24,34 @@ class User extends Model
             [ 'alias' => 'group' ]);
     }
 
+    public function validation()
+    {
+        $validator = new Validation();
+
+        $validator->add(
+            'email',
+            new Email([
+                'model' => $this,
+                'message' => 'Email указан не верно'
+            ])
+        );
+
+        $validator->add(
+            'email',
+            new Uniqueness([
+                'model' => $this,
+                'message' => 'Такой e-mail уже используется',
+            ])
+        );
+
+        $validator->add(
+            'username',
+            new Uniqueness([
+                'model' => $this,
+                'message' => 'Логин занят',
+            ])
+        );
+
+        return $this->validate($validator);
+    }
 }
