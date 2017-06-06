@@ -79,6 +79,10 @@ $(function() {
       window.location = '/index/profile';
      } else {
       window.location = '/index/register';
+      $('#username').val('');
+      $('#password1').val('');
+      $('#password2').val('');
+      $('#email').val('');
      }
     }
    })
